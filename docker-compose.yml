@@ -1,0 +1,42 @@
+version: "3"
+
+services:
+  server:
+    build: server/
+    command: /app/start.sh
+    ports:
+      - "3000:3000"
+    volumes:
+      - ./server:/app
+      - /app/node_modules
+    networks:
+      - scantoqueue
+    depends_on:
+      - mongodb
+
+  mongodb:
+    image: mongo
+    ports:
+      - "27017:27017"
+    volumes:
+      - mongodb-data:/data/db
+    networks:
+      - scantoqueue
+
+  client:
+    build: client/
+    command: /app/start.sh
+    ports:
+      - "5173:5173"
+    volumes:
+      - ./client:/app
+      - /app/node_modules
+    networks:
+      - scantoqueue
+
+volumes:
+  mongodb-data:
+
+
+networks:
+  scantoqueue:

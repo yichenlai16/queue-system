@@ -1,0 +1,33 @@
+{
+  "name": "client",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview",
+    "lint": "eslint --ext .js,.vue src --fix ",
+    "format": "prettier --write src/"
+  },
+  "dependencies": {
+    "@rushstack/eslint-patch": "^1.6.0",
+    "@vue/eslint-config-prettier": "^8.0.0",
+    "pinia": "^2.1.7",
+    "qrcode.vue": "^3.4.1",
+    "vue": "^3.3.8",
+    "vue-native-websocket-vue3": "^3.1.7",
+    "vue-router": "^4.2.5"
+  },
+  "devDependencies": {
+    "@vitejs/plugin-vue": "^4.5.0",
+    "autoprefixer": "^10.4.16",
+    "eslint": "^8.55.0",
+    "eslint-plugin-vue": "^9.19.2",
+    "postcss": "^8.4.32",
+    "prettier": "^3.1.1",
+    "prettier-plugin-tailwindcss": "^0.5.9",
+    "tailwindcss": "^3.3.6",
+    "vite": "^5.0.0"
+  }
+}
